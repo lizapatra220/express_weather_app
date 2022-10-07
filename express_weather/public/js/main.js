@@ -23,20 +23,20 @@ const getinfo = async (event) => {
       temp.innerText = arrdata[0].main.temp;
       const tempmood = arrdata[0].weather[0].main;
 
-      //condition--
-      //   if (tempmood == "Sunny") {
-      //     temp_status.innerText =
-      //       "<i class='fas fa-sun' style='color:#eccc68;'></i>";
-      //   } else if (tempmood == "Clouds") {
-      //     temp_status.innerText =
-      //       "<i class='fas fa-cloud' style='color:#dfe4ea;'></i>";
-      //   } else if (tempmood == "Rainy") {
-      //     temp_status.innerText =
-      //       "<i class='fas fa-rain style='color:#a4b0be;'></i>";
-      //   } else {
-      //     temp_status.innerText =
-      //       "<i class='fas fa-cloud' style='color:#44c3de;'></i>";
-      //   }
+      // condition--
+      if (tempmood == "Sunny") {
+        temp_status.innerHTML =
+          "<i class='fas fa-sun' style='color:#eccc68;'></i>";
+      } else if (tempmood == "Clouds") {
+        temp_status.innerHTML =
+          "<i class='fas fa-cloud' style='color:#dfe4ea;'></i>";
+      } else if (tempmood == "Rainy") {
+        temp_status.innerHTML =
+          "<i class='fas fa-rain style='color:#a4b0be;'></i>";
+      } else {
+        temp_status.innerHTML =
+          "<i class='fas fa-cloud' style='color:#44c3de;'></i>";
+      }
 
       datahide.classList.remove("data_hide");
     } catch (error) {

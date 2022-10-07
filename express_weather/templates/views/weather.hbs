@@ -19,8 +19,8 @@
                 </div>
                 <div class="tempinfo">
                     <div class="top_layer">
-                        <p class="day">Friday</p>
-                        <p class="today_day">7 oct</p>
+                        <p class="day" id="day">Friday</p>
+                        <p class="today_day" id="today_day">4 oct</p>
 
                     </div>
                     <div class="main_layer">
@@ -43,9 +43,8 @@
      </div>
     {{>footer}}
     <script src="js/main.js"></script>
-    <script>
-        
-         const getCurrentDay = () => {
+       <script >
+            const getCurrentDay = () => {
         let week = new Array(7);
         week[0] = "Sun";
         week[1] = "Mon";
@@ -79,13 +78,19 @@
           "Dec",
         ];
         var now = new Date();
-        var month = months[now.getMonth() + 1];
+        var month = months[now.getMonth()];
         var date = now.getDate();
     
          let today_day=document.getElementById('today_day');
          today_day.innerText=` ${date} ${month}  `;
+      }
+      getCurrentDay();
+      getCurrentTime();
+
 
     </script>
+        
+     
 
 </body>
 </html>
